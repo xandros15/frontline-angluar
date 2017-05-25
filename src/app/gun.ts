@@ -6,8 +6,8 @@ export class Gun {
     name: string;
     type: string;
     damage: number;
-    dodge: number;
-    hit: number;
+    avoid: number;
+    accuracy: number;
     attackSpeed: number;
     hp: number;
     reloadTime: number;
