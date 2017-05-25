@@ -10,10 +10,10 @@ import {Gun} from "../gun";
 
 
 export class GunListComponent {
-    guns = GUNS;
-    selectedGun = null;
+    guns: Gun[] = GUNS;
+    selectedGun: Gun = null;
 
-    onSelect(gun : Gun): void {
+    onSelect(gun: Gun): void {
         this.selectedGun = gun;
     }
 }
