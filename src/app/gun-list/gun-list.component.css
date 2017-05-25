@@ -1,0 +1,21 @@
+.guns .gun {
+    margin: .1rem 1rem;
+    cursor: pointer;
+}
+
+.guns .gun:hover,
+.guns .gun:focus,
+.guns .gun.selected {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.guns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 3rem;
+    margin-right: .5rem;
+}

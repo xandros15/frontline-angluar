@@ -1,0 +1,16 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail{
+    margin-bottom: .2rem;
+}
+
+.badge {
+    font-weight: 700;
+    display: inline-block;
+    min-width: 8rem;
+    margin-right: .5rem;
+}

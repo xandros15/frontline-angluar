@@ -1,0 +1,49 @@
+<div *ngIf="gun" class="details">
+    <h2>{{gun.name}} details!</h2>
+    <ul>
+        <li class="detail">
+            <label class="badge">id</label>
+            {{gun.id}}
+        </li>
+        <li class="detail">
+            <label class="badge">name</label>
+            {{gun.name}}
+        </li>
+        <li class="detail">
+            <label class="badge">type</label>
+            {{gun.type}}
+        </li>
+        <li class="detail">
+            <label class="badge">damage</label>
+            {{gun.damage}}
+        </li>
+        <li class="detail">
+            <label class="badge">dodge</label>
+            {{gun.dodge}}
+        </li>
+        <li class="detail">
+            <label class="badge">hit chance</label>
+            {{gun.hit}}
+        </li>
+        <li class="detail">
+            <label class="badge">attack speed</label>
+            {{gun.attackSpeed}}
+        </li>
+        <li class="detail">
+            <label class="badge">health points</label>
+            {{gun.hp}}
+        </li>
+        <li class="detail" *ngIf="gun.reloadTime">
+            <label class="badge">reload time</label>
+            {{gun.reloadTime}}
+        </li>
+        <li class="detail" *ngIf="gun.armor">
+            <label class="badge">armor</label>
+            {{gun.armor}}
+        </li>
+        <li class="detail" *ngIf="gun.skill">
+            <label class="badge">skill name</label>
+            {{gun.skill}}
+        </li>
+    </ul>
+</div>
