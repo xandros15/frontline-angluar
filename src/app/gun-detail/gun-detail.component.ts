@@ -16,4 +16,10 @@ export class GunDetailComponent implements OnInit {
 
     ngOnInit() {
     }
+
+    getDps()  {
+        //50attack speed is 1 attack per sec
+        const realAttackSpeed = this.gun.attackSpeed / 50;
+        return Math.round(this.gun.damage * realAttackSpeed);
+    }
 }
