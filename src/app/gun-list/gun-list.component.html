@@ -1,7 +1,11 @@
 <div *ngIf="selectedGun" class="container">
     <app-gun-detail [gun]="selectedGun"></app-gun-detail>
 </div>
-<h2>Gun list</h2>
+
+<div *ngIf="!selectedGun" class="container">
+    <h2>Select Gun:</h2>
+</div>
+
 <ul class="guns">
     <li *ngFor="let gun of guns" class="col-xs-6 col-sm-3" (click)="onSelect(gun)">
         <div class="gun">
