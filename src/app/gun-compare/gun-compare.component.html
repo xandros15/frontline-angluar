@@ -1,0 +1,50 @@
+<section class="compare container">
+    <h2>Guns to compare:</h2>
+    <table>
+        <tr>
+            <td>Chose to compare:</td>
+            <td>
+                <label aria-hidden="true" for="compare-select-1">Chose to compare:</label>
+                <select id="compare-select-1" [(ngModel)]="select1">
+                    <option *ngFor="let gun of guns" [ngValue]="gun">{{gun.name}}</option>
+                </select>
+            </td>
+            <td>
+                <label aria-hidden="true" for="compare-select-2">Chose to compare:</label>
+                <select id="compare-select-2" [(ngModel)]="select2">
+                    <option *ngFor="let gun of guns" [ngValue]="gun">{{gun.name}}</option>
+                </select>
+            </td>
+            <td>
+                <label aria-hidden="true" for="compare-select-3">Chose to compare:</label>
+                <select id="compare-select-3" [(ngModel)]="select3">
+                    <option *ngFor="let gun of guns" [ngValue]="gun">{{gun.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td *ngFor="let compare of getSelectedArray()">
+                {{compare.name}}
+            </td>
+        </tr>
+        <tr>
+            <th>Dps</th>
+            <td *ngFor="let compare of getSelectedArray()">
+                {{getDps(compare)}}
+            </td>
+        </tr>
+        <tr>
+            <th>HP</th>
+            <td *ngFor="let compare of getSelectedArray()">
+                {{compare.hp}}
+            </td>
+        </tr>
+        <tr>
+            <th>Avoid</th>
+            <td *ngFor="let compare of getSelectedArray()">
+                {{compare.avoid}}
+            </td>
+        </tr>
+    </table>
+</section>
