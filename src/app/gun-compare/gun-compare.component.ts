@@ -1,6 +1,6 @@
-import {Component} from "@angular/core";
-import {GUNS} from "../guns";
+import {Component, OnInit} from "@angular/core";
 import {Gun} from "../gun";
+import {GunService} from "../gun.service";
 
 @Component({
     selector: 'app-gun-compare',
@@ -8,11 +8,23 @@ import {Gun} from "../gun";
     styleUrls: ['./gun-compare.component.css']
 })
 
-export class GunCompareComponent {
+export class GunCompareComponent implements OnInit {
+
     select1: Gun = null;
     select2: Gun = null;
     select3: Gun = null;
-    guns: Gun[] = GUNS;
+    guns: Gun[];
+
+    constructor(private gunService: GunService) {
+    }
+
+    ngOnInit(): void {
+        this.getGuns();
+    }
+
+    getGuns(): void {
+        this.guns = this.gunService.getGuns();
+    }
 
     getDps(gun: Gun) {
         return Math.round(gun.damage * gun.attackSpeed / 50);

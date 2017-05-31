@@ -1,6 +1,6 @@
-import {Component} from "@angular/core";
-import {GUNS} from "../guns";
+import {Component, OnInit} from "@angular/core";
 import {Gun} from "../gun";
+import {GunService} from "../gun.service";
 
 @Component({
     selector: 'app-gun-list',
@@ -9,9 +9,20 @@ import {Gun} from "../gun";
 })
 
 
-export class GunListComponent {
-    guns: Gun[] = GUNS;
+export class GunListComponent implements OnInit {
+    guns: Gun[];
     selectedGun: Gun = null;
+
+    ngOnInit(): void {
+        this.getGuns();
+    }
+
+    constructor(private gunService: GunService) {
+    }
+
+    getGuns() {
+        this.guns = this.gunService.getGuns();
+    }
 
     onSelect(gun: Gun): void {
         this.selectedGun = gun;
